@@ -1,8 +1,9 @@
-import HomeIcon from '@mui/icons-material/HomeRounded';
-import UserIcon from '@mui/icons-material/AccountBoxRounded';
-import WorksIcon from '@mui/icons-material/Ballot';
-import ServicesIcon from '@mui/icons-material/ViewCarouselRounded';
-import MailIcon from '@mui/icons-material/MailRounded';
+import { HiHome } from 'react-icons/hi2';
+import { BiSolidUserRectangle } from 'react-icons/bi';
+import { MdViewCarousel } from 'react-icons/md';
+import { AiFillProduct } from 'react-icons/ai';
+import { IoIosMail } from 'react-icons/io';
+
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Tooltip from '@mui/material/Tooltip';
@@ -12,22 +13,22 @@ export const navLinks = [
   {
     name: 'home',
     path: '/',
-    icon: <HomeIcon className="text-3xl xl:text-2xl" />,
+    icon: <HiHome className="text-3xl xl:text-2xl" />,
   },
   {
     name: 'about',
     path: '/about',
-    icon: <UserIcon className="text-3xl xl:text-2xl" />,
+    icon: <BiSolidUserRectangle className="text-3xl xl:text-2xl" />,
   },
   {
     name: 'services',
     path: '/services',
-    icon: <ServicesIcon className="text-3xl xl:text-2xl" />,
+    icon: <MdViewCarousel className="text-3xl xl:text-2xl" />,
   },
   {
     name: 'projects',
     path: '/work',
-    icon: <WorksIcon className="text-3xl xl:text-2xl" />,
+    icon: <AiFillProduct className="text-3xl xl:text-2xl" />,
   },
   // {
   //   name: 'testimonials',
@@ -37,7 +38,7 @@ export const navLinks = [
   {
     name: 'contact',
     path: '/contact',
-    icon: <MailIcon className="text-3xl xl:text-2xl" />,
+    icon: <IoIosMail className="text-3xl xl:text-2xl" />,
   },
 ];
 
@@ -77,7 +78,7 @@ const Navbar = () => {
               <CustomTooltip
                 title={link.name}
                 placement="left"
-                enterDelay={800}
+                enterDelay={600}
                 className="hidden xl:block capitalize"
                 arrow
               >
