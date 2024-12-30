@@ -27,7 +27,7 @@ export const navLinks = [
   },
   {
     name: 'projects',
-    path: '/work',
+    path: '/projects',
     icon: <AiFillProduct className="text-3xl xl:text-2xl" />,
   },
   // {

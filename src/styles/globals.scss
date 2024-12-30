@@ -48,4 +48,15 @@
   .textarea {
     @apply w-full h-[180px] p-6 capitalize rounded-lg resize-none;
   }
+  .typingText {
+    background-image: linear-gradient(60deg, #E21143, #FFB03A);
+    background-clip: text;
+    color: transparent;
+  }
+  .name {
+    background: rgb(255,255,255);
+background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(247,247,255,1) 35%, rgba(187,214,255,1) 100%);
+    background-clip: text;
+    color: transparent;
+  }
 }
