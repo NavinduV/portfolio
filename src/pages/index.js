@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import ParticlesContainer from "../components/ParticlesContainer";
+// import ParticlesContainer from "../components/ParticlesContainer";
 import ProjectsBtn from "../components/Button/ProjectsBtn";
 import {AvatarHome} from "../components/Avatar/Avatar";
 import { fadeIn } from "../components/Variants/Variants";
@@ -23,8 +23,8 @@ const sliderVariants = {
 const Home = () => {
   return (
     <div className="bg-primary/60 h-full">
-      <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
-        <ParticlesContainer />
+      <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10 overflow-auto scroll-smooth">
+        {/* Content */}
         <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto">
           <motion.div
             className="xl:flex items-center gap-4 z-10 hidden lg:flex mb-3"
@@ -111,7 +111,7 @@ const Home = () => {
           animate="show"
           exit="hidden"
           transition={{ duration: 1, ease: 'easeInOut' }}
-          className="absolute w-full h-full max-w-[727px] max-h-[688px] -bottom-32 lg:bottom-28 lg:right-[12%]"
+          className="absolute w-full h-full max-w-[727px] max-h-[688px] -bottom-32 lg:bottom-28 lg:right-[10%]"
         >
           <AvatarHome />
         </motion.div>
@@ -128,5 +128,6 @@ const Home = () => {
     </div>
   );
 };
+
 
 export default Home;
