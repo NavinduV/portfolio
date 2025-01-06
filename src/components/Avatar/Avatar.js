@@ -15,16 +15,28 @@ export const AvatarHome = () => {
   );
 };
 
+export const AvatarAboutBg = () => {
+  return (
+    <div className="hidden xl:flex xl:max-w-none">
+      <Image
+        src={'/profile/avataraboutbg.png'}
+        width={737}
+        height={678}
+        alt="navindu-profile-pic"
+        className="translate-z-0 w-full h-full"
+      />
+    </div>
+  );
+};
+
 export const AvatarAbout = () => {
   return (
-    <div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
           transition: { delay: 1, duration: 0.4, ease: 'easeIn' },
         }}
-        className="relative"
       >
         <motion.div
           initial={{ opacity: 0 }}
@@ -39,7 +51,7 @@ export const AvatarAbout = () => {
             width={298}
             height={298}
             alt="navindu-profile-pic"
-            className="object-contain rounded-full relative w-[298px] h-[298px]"
+            className="object-contain rounded-full w-[298px] h-[298px]"
           />
         </motion.div>
         <motion.svg
@@ -69,6 +81,5 @@ export const AvatarAbout = () => {
           />
         </motion.svg>
       </motion.div>
-    </div>
   );
 };

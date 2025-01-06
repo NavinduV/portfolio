@@ -27,7 +27,7 @@ const Home = () => {
         <ParticlesContainer />
         <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto">
           <motion.div
-            className="xl:flex items-center gap-4 z-10 hidden lg:flex mb-3"
+            className="xl:flex items-center gap-4 z-10 hidden mb-3"
             variants={fadeIn('down', 0.2)}
             initial="hidden"
             animate="show"

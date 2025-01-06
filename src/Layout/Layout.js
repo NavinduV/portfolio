@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
       <Header />
       {children}
     </div>
-  );
+  )
 };
 
 export default Layout;
