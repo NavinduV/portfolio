@@ -5,6 +5,7 @@ import ProjectsBtn from "../components/Button/ProjectsBtn";
 import {AvatarHome} from "../components/Avatar/Avatar";
 import { fadeIn } from "../components/Variants/Variants";
 import {TextTyping} from "../components/TextTyping/TextTyping";
+import { HiOutlineDocumentDownload } from 'react-icons/hi';
 
 const sliderVariants = {
   initial: {
@@ -65,13 +66,30 @@ const Home = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16 z-10"
+            className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-8 z-10"
           >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero
-            asperiores accusantium quam voluptatem non. Dicta accusamus
-            doloribus blanditiis quasi quaerat minus vero autem explicabo
-            praesentium, magni delectus vel fugit ullam.
+            Specialized in designing and developing high-quality, scalable web
+            applications that deliver exceptional user experiences. Explore my
+            portfolio to learn more about my work and expertise.
           </motion.p>
+          <div className="mb-12 flex justify-center items-center xl:justify-start z-10">
+            {/* <button className=" border border-accent py-2 px-8 rounded-lg bg-accent cursor-pointer"></button> */}
+            <a
+              href="/documents/MBDNV Gunawardhana CV.pdf"
+              download="Navindu Gunawardhana CV.pdf"
+              className="group flex gap-2 justify-center cv-btn cv-btn--changeGradient text-md uppercase tracking-[1px] leading-[1.4]"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              My CV
+              <HiOutlineDocumentDownload
+                size={22}
+                className="group-hover:translate-y-[2px] transition-all duration-300"
+              />
+            </a>
+          </div>
           <div className="flex justify-center xl:hidden relative">
             <ProjectsBtn />
           </div>
