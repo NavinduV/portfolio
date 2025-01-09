@@ -1,4 +1,4 @@
-.cv-btn {
+.anim-btn {
   position: relative;
   padding: 12px 30px;
   color: #fff;
@@ -11,21 +11,51 @@
   transition: all 0.8s ease-in-out;
 
   &--changeGradient {
-    background: linear-gradient(90deg, #e21143, #ffb03a, #003bb9, #e21143);
+    background: linear-gradient(90deg, #e21143, #ffb03a,  #e21143);
     background-size: 400%;
 
     &:hover {
       animation: changeGradientAnimation 8s linear infinite;
     }
+  }
+
+  @keyframes changeGradientAnimation {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 400%;
+    }
+  }
+
+  &--neon {
+    overflow: hidden;
+    transition: 0.5s;
+    filter: hue-rotate(290deg);
+
+    &:hover {
+      background: #f3f3f3;
+      color: #050801;
+      box-shadow: 0 0 5px #f3f3f3, 0 0 10px #f3f3f3, 0 0 15px #f3f3f3,
+        0 0 20px #f3f3f3;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      bottom: 2px;
+    }
+
     span {
       position: absolute;
-      background: linear-gradient(180deg, #e21143, #ffb03a);
+      background: linear-gradient(180deg, transparent, #fafafa);
 
       &:nth-child(1) {
         top: 0;
         left: 0;
         width: 100%;
-        height: 4px;
+        height: 2px;
         animation: borderAnimation1 1s linear infinite;
 
         @keyframes borderAnimation1 {
@@ -40,7 +70,7 @@
       &:nth-child(2) {
         top: 0;
         right: 0;
-        width: 3px;
+        width: 2px;
         height: 100%;
         animation: borderAnimation2 1s linear infinite;
         animation-delay: 0.25s;
@@ -58,7 +88,7 @@
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 3px;
+        height: 2px;
         animation: borderAnimation3 1s linear infinite;
 
         @keyframes borderAnimation3 {
@@ -73,7 +103,7 @@
       &:nth-child(4) {
         top: 0;
         left: 0;
-        width: 3px;
+        width: 2px;
         height: 100%;
         animation: borderAnimation4 2s linear infinite;
         animation-delay: 0.25s;
@@ -89,101 +119,95 @@
       }
     }
   }
-  @keyframes changeGradientAnimation {
-    0% {
-      background-position: 0%;
-    }
-    100% {
-      background-position: 400%;
-    }
-  }
 }
 
-:root{
-  --v-progress-left: 30px;
-  --v-progress-item-height-width: 12px;
-  --v-progress-line-height: 65px;
-  --v-progress-line-width: 3px;
-  --v-progress-gap: 12px;
-  --blue: #f13024;
-  --green: #159895;
-  --light-blue: #f13024;
-}
 
-.v-progress {
-  background-color: var(--body-background-color);
-  padding: 10px 0;
 
-  ul {
-    list-style: none;
-  }
+// :root{
+//   --v-progress-left: 30px;
+//   --v-progress-item-height-width: 12px;
+//   --v-progress-line-height: 65px;
+//   --v-progress-line-width: 3px;
+//   --v-progress-gap: 12px;
+//   --blue: #f13024;
+//   --green: #159895;
+//   --light-blue: #f13024;
+// }
 
-  .v-progress-item {
-    position: relative;
-    margin-left: var(--v-progress-left);
-    margin-right: var(--v-progress-left);
-    height: var(--v-progress-item-height-width);
-    line-height: var(--v-progress-item-height-width);
-    margin-bottom: var(--v-progress-line-height);
-    --v-progress-border: 8px;
+// .v-progress {
+//   background-color: var(--body-background-color);
+//   padding: 10px 0;
 
-    &:last-child {
-      margin-bottom: 0px;
+//   ul {
+//     list-style: none;
+//   }
 
-      &:after {
-        border-left: 0px;
-      }
-    }
+//   .v-progress-item {
+//     position: relative;
+//     margin-left: var(--v-progress-left);
+//     margin-right: var(--v-progress-left);
+//     height: var(--v-progress-item-height-width);
+//     line-height: var(--v-progress-item-height-width);
+//     margin-bottom: var(--v-progress-line-height);
+//     --v-progress-border: 8px;
 
-    &:before {
-      content: "";
-      display: inline-block;
-      position: absolute;
-      width: var(--v-progress-item-height-width);
-      height: var(--v-progress-item-height-width);
-      left: calc(0px - var(--v-progress-left));
-      border-radius: 50%;
-      background-color: #ccc;
-    }
+//     &:last-child {
+//       margin-bottom: 0px;
 
-    &:after {
-      content: "";
-      display: inline-block;
-      position: absolute;
-      height: calc(var(--v-progress-line-height) - var(--v-progress-gap));
-      top: calc(var(--v-progress-item-height-width) + var(--v-progress-gap) / 2);
-      left: calc(
-        0px - var(--v-progress-left) + var(--v-progress-item-height-width) / 2 -
-          var(--v-progress-line-width) / 2
-      );
-      border-left: var(--v-progress-line-width) solid #ccc;
-    }
+//       &:after {
+//         border-left: 0px;
+//       }
+//     }
 
-    &.completed {
-      &:after {
-        border-color: var(--light-blue);
-      }
+//     &:before {
+//       content: "";
+//       display: inline-block;
+//       position: absolute;
+//       width: var(--v-progress-item-height-width);
+//       height: var(--v-progress-item-height-width);
+//       left: calc(0px - var(--v-progress-left));
+//       border-radius: 50%;
+//       background-color: #ccc;
+//     }
 
-      &:before {
-        content: "✔";
-        font-size: 11px;
-        text-align: center;
-        color: white;
-        background: var(--light-blue);
-        height: calc(var(--v-progress-border) + var(--v-progress-item-height-width));
-        width: calc(var(--v-progress-border) + var(--v-progress-item-height-width));
-        line-height: calc(var(--v-progress-border) + var(--v-progress-item-height-width));
-        left: calc(0px - var(--v-progress-left) - var(--v-progress-border) / 2);
-        top: calc(0px - var(--v-progress-border) + var(--v-progress-border) / 2);
-      }
-    }
+//     &:after {
+//       content: "";
+//       display: inline-block;
+//       position: absolute;
+//       height: calc(var(--v-progress-line-height) - var(--v-progress-gap));
+//       top: calc(var(--v-progress-item-height-width) + var(--v-progress-gap) / 2);
+//       left: calc(
+//         0px - var(--v-progress-left) + var(--v-progress-item-height-width) / 2 -
+//           var(--v-progress-line-width) / 2
+//       );
+//       border-left: var(--v-progress-line-width) solid #ccc;
+//     }
 
-    &.inprogress {
-      &:before {
-        background-color: white;
-        outline: calc(var(--v-progress-border) / 2) solid var(--blue);
-        top: calc(0px - var(--v-progress-border) + var(--v-progress-border));
-      }
-    }
-  }
-}
+//     &.completed {
+//       &:after {
+//         border-color: var(--light-blue);
+//       }
+
+//       &:before {
+//         content: "✔";
+//         font-size: 11px;
+//         text-align: center;
+//         color: white;
+//         background: var(--light-blue);
+//         height: calc(var(--v-progress-border) + var(--v-progress-item-height-width));
+//         width: calc(var(--v-progress-border) + var(--v-progress-item-height-width));
+//         line-height: calc(var(--v-progress-border) + var(--v-progress-item-height-width));
+//         left: calc(0px - var(--v-progress-left) - var(--v-progress-border) / 2);
+//         top: calc(0px - var(--v-progress-border) + var(--v-progress-border) / 2);
+//       }
+//     }
+
+//     &.inprogress {
+//       &:before {
+//         background-color: white;
+//         outline: calc(var(--v-progress-border) / 2) solid var(--blue);
+//         top: calc(0px - var(--v-progress-border) + var(--v-progress-border));
+//       }
+//     }
+//   }
+// }

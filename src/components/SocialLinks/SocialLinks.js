@@ -6,7 +6,7 @@ import Image from "next/image";
 // import { FaWhatsapp } from 'react-icons/fa';
 
 
-const Socials = () => {
+const SocialLinks = () => {
   return (
     <div className="flex items-center gap-x-5 z-10">
       <Link href={'/'} className="group">
@@ -58,4 +58,4 @@ const Socials = () => {
   );
 };
 
-export default Socials;
+export default SocialLinks;

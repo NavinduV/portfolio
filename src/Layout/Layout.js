@@ -1,7 +1,7 @@
 import { Sora, Poppins } from 'next/font/google';
 import Navbar from '../components/Navbar/Navbar';
-import Header from "../components/Header";
-import TopLeftImg from "../components/TopLeftImg";
+import Header from "../components/Header/Header";
+import TopLeftImg from "../components/Image/TopLeftImg";
 
 const sora = Sora({
   subsets: ['latin'],

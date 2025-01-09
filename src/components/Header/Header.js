@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import { Rotate } from './Variants/Variants';
-import Logo from "../components/Logo";
-import Socials from '../components/Socials';
+import { Rotate } from '../Variants/Variants';
+import Logo from "../../components/Logo/Logo";
+import Socials from '../../components/SocialLinks/SocialLinks';
 import { useRouter } from 'next/router';
 
 const Header = () => {

@@ -3,7 +3,6 @@ import { BiSolidUserRectangle } from 'react-icons/bi';
 import { MdViewCarousel } from 'react-icons/md';
 import { AiFillProduct } from 'react-icons/ai';
 import { IoIosMail } from 'react-icons/io';
-
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Tooltip from '@mui/material/Tooltip';

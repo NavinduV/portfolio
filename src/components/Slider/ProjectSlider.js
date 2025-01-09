@@ -1,5 +1,5 @@
 // data
-const workSlides = {
+const projectSlides = {
   slides: [
     {
       images: [
@@ -44,8 +44,8 @@ const workSlides = {
   ],
 };
 
-const WorkSlider = () => {
+const ProjectSlider = () => {
   return <div>Work Slider</div>;
 };
 
-export default WorkSlider;
+export default ProjectSlider;

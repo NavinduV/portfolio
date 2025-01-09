@@ -14,7 +14,7 @@ import {
   SiAdobexd,
   SiAdobephotoshop,
 } from 'react-icons/si';
-import Circles from '../../components/Circles';
+import Circles from '../../components/Image/Circles';
 import { AvatarAboutBg } from '../../components/Avatar/Avatar';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -50,19 +50,6 @@ const aboutData = [
       },
     ],
   },
-  // {
-  //   title: 'awards',
-  //   info: [
-  //     {
-  //       title: 'Webby Awards - Honoree',
-  //       stage: '2011 - 2012',
-  //     },
-  //     {
-  //       title: 'Adobe Design Achievement Awards - Finalist',
-  //       stage: '2009 - 2010',
-  //     },
-  //   ],
-  // },
   {
     title: 'education',
     info: [
@@ -125,14 +112,14 @@ const About = () => {
             exit="hidden"
           >
             Transforming <span className="text-accent">Visions</span> <br />
-            into Stunning Creations.
+            into Stunning Creations<span className="text-accent">.</span>
           </motion.h2>
           <motion.p
             variants={fadeIn('right', 0.4)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
+            className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 z-10"
           >
             I have over 4 years of experience in web development, creating
             user-friendly and visually appealing websites and applications. I

@@ -1,5 +1,6 @@
 import '../styles/globals.scss';
 import "../components/Navbar/Navbar.scss";
+import "../styles/components.scss";
 import Layout from '../Layout/Layout';
 import Transition from "../components/Transition/Transition";
 import { useRouter } from 'next/router';
