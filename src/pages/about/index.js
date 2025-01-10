@@ -172,7 +172,7 @@ const About = () => {
           <AvatarAboutBg />
         </motion.div>
 
-        <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
+        <div className="container mx-auto flex flex-col items-center xl:flex-row gap-x-6 h-fit xl:h-full">
           <div className="pt-8 xl:pt-0 flex flex-1 flex-col justify-center">
             <motion.h2
               className="h2"
@@ -246,12 +246,13 @@ const About = () => {
             </motion.div>
           </div>
 
+          {/* Tabs */}
           <motion.div
             variants={fadeIn('left', 0.4)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="flex flex-col w-full xl:max-w-[48%] h-[480px]"
+            className="flex flex-col w-full xl:max-w-[48%] h-fit xl:h-[50vh]"
           >
             <div className="flex gap-x-4 mb-4 mx-auto xl:mx-0 xl:gap-x-8">
               {aboutData.map((item, itemId) => {
@@ -279,7 +280,7 @@ const About = () => {
                     })}
                   </div> */}
 
-            <div className="v-progress px-1 pt-5">
+            <div className="v-progress px-1 pt-5 pl-0">
               <ul>
                 {aboutData[index].info.map((item, itemId) => {
                   return (
