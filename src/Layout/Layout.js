@@ -1,6 +1,7 @@
 import { Sora, Poppins } from 'next/font/google';
 import Navbar from '../components/Navbar/Navbar';
 import TopLeftImg from "../components/Image/TopLeftImg";
+import Header from '../components/Header/Header';
 
 const sora = Sora({
   subsets: ['latin'],
@@ -19,6 +20,7 @@ const Layout = ({ children }) => {
     <div className={`page text-white bg-site bg-cover bg-no-repeat ${poppins.variable} font-poppins relative`}>
       <TopLeftImg />
       <Navbar />
+      <Header />
       {children}
     </div>
   )

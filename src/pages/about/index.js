@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { fadeInHalf, fadeIn } from '../../components/Variants/Variants';
-import Header from '../../components/Header/Header';
 
 import CountUp from 'react-countup';
 
@@ -139,7 +138,6 @@ const About = () => {
   const [index, setIndex] = useState(0);
   return (
     <>
-      <Header />
       <div className="h-full bg-primary/60 py-32 text-center xl:text-left overflow-y-scroll scrollbar-none">
         <Circles />
 

@@ -7,7 +7,6 @@ import { fadeIn } from "../components/Variants/Variants";
 import {TextTyping} from "../components/TextTyping/TextTyping";
 import { HiOutlineDocumentDownload } from 'react-icons/hi';
 import { FiGithub } from 'react-icons/fi';
-import Header from '../components/Header/Header';
 
 
 const sliderVariants = {
@@ -27,7 +26,6 @@ const sliderVariants = {
 const Home = () => {
   return (
     <div className="bg-primary/60 h-full overflow-y-scroll scrollbar-none">
-      <Header />
       <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
         <ParticlesContainer />
         <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto">

@@ -14,10 +14,6 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>Navindu Gunawardhana</title>
-        <meta
-          name="Navindu Gunawardhana Portfolio"
-          content="This is Navindu Gunawardhana Portfolio Website."
-        />
       </Head>
       <Layout>
         <AnimatePresence mode="wait">
