@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { motion } from "framer-motion";
 import ParticlesContainer from '../components/ParticlesContainer/ParticlesContainer';
 import ProjectsBtn from "../components/Button/ProjectsBtn";
@@ -35,9 +36,11 @@ const Home = () => {
             exit="hidden"
           >
             <figure className="w-9 h-9 rounded-md overflow-hidden">
-              <img
+              <Image
                 className="object-cover h-10 w-10"
-                src="profile/navindu-figure.jpg"
+                height={40}
+                width={40}
+                src="/profile/navindu-figure.jpg"
                 alt="navindu"
               />
             </figure>

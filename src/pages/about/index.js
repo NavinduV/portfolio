@@ -15,21 +15,85 @@ const aboutData = [
       {
         title: 'Web Development',
         icons: [
-          <Image src={'/icons/html.svg'} height={25} width={25} />,
-          <Image src={'/icons/css.svg'} height={25} width={25} />,
-          <Image src={'/icons/javascript.svg'} height={25} width={25} />,
-          <Image src={'/icons/react.svg'} height={25} width={25} />,
-          <Image src={'/icons/node-js.svg'} height={25} width={25} />,
-          <Image src={'/icons/mongodb.svg'} height={25} width={25} />,
-          <Image src={'/icons/framer.svg'} height={25} width={25} />,
+          <>
+            <Image
+              src={'/icons/html.svg'}
+              height={25}
+              width={25}
+              alt="HTML"
+              key="html"
+            />
+            <Image
+              src={'/icons/css.svg'}
+              height={25}
+              width={25}
+              alt="CSS"
+              key="css"
+            />
+            <Image
+              src={'/icons/javascript.svg'}
+              height={25}
+              width={25}
+              alt="JavaScript"
+              key="javascript"
+            />
+            <Image
+              src={'/icons/react.svg'}
+              height={25}
+              width={25}
+              alt="React"
+              key="react"
+            />
+            <Image
+              src={'/icons/node-js.svg'}
+              height={25}
+              width={25}
+              alt="Node.js"
+              key="nodejs"
+            />
+            <Image
+              src={'/icons/mongodb.svg'}
+              height={25}
+              width={25}
+              alt="MongoDB"
+              key="mongodb"
+            />
+            <Image
+              src={'/icons/framer.svg'}
+              height={25}
+              width={25}
+              alt="Framer"
+              key="framer"
+            />
+          </>,
         ],
       },
       {
         title: 'UI/UX Design',
         icons: [
-          <Image src={'/icons/figma.svg'} height={25} width={25} />,
-          <Image src={'/icons/photoshop.svg'} height={25} width={25} />,
-          <Image src={'/icons/illustrator.svg'} height={25} width={25} />,
+          <>
+            <Image
+              src={'/icons/figma.svg'}
+              height={25}
+              width={25}
+              alt="Figma"
+              key="figma"
+            />
+            <Image
+              src={'/icons/photoshop.svg'}
+              height={25}
+              width={25}
+              alt="Photoshop"
+              key="photoshop"
+            />
+            <Image
+              src={'/icons/illustrator.svg'}
+              height={25}
+              width={25}
+              alt="Illustrator"
+              key="illustrator"
+            />
+          </>,
         ],
       },
     ],
@@ -174,7 +238,7 @@ const About = () => {
                   key={itemId}
                   className={`${
                     index === itemId &&
-                    'text-accent after:bg-[#c90000] after:w-[99%] after:transition-all after:duration-500'
+                    'text-accent after:bg-[#a71212] after:w-[99%] after:transition-all after:duration-500'
                   } cursor-pointer capitalize xl:text-lg relative after:w-[70%] after:h-[2px] after:hover:w-[99%] after:hover:transition-all after:hover:duration-500 after:bg-white after:absolute after:-bottom-1 after:left-0`}
                   onClick={() => setIndex(itemId)}
                 >
@@ -213,10 +277,13 @@ const About = () => {
                               <div>{item.stage}</div>
                             </div>
 
-                            <div className="flex gap-x-4">
-                              {item.icons?.map((icon, itemId) => {
+                            <div>
+                              {item.icons?.map((icon, iconId) => {
                                 return (
-                                  <div className="text-2xl text-white">
+                                  <div
+                                    key={iconId}
+                                    className="text-2xl text-white flex gap-x-4"
+                                  >
                                     {icon}
                                   </div>
                                 );

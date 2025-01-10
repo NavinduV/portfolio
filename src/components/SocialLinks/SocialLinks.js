@@ -10,6 +10,7 @@ const SocialLinks = () => {
           width={28}
           height={28}
           className="cursor-pointer group-hover:scale-110 transition-all duration-300"
+          alt="github"
         />
       </Link>
       <Link href={'/'} className="group">
@@ -18,6 +19,7 @@ const SocialLinks = () => {
           width={28}
           height={28}
           className="cursor-pointer group-hover:scale-110 transition-all duration-300"
+          alt="linkedin"
         />
       </Link>
       <Link href={'/'} className="group">
@@ -26,6 +28,7 @@ const SocialLinks = () => {
           width={28}
           height={28}
           className="cursor-pointer group-hover:scale-110 transition-all duration-300"
+          alt="medium"
         />
       </Link>
       <Link href={'/'} className="group">
@@ -34,21 +37,9 @@ const SocialLinks = () => {
           width={26}
           height={26}
           className="cursor-pointer group-hover:scale-110 transition-all duration-300"
+          alt="whatsapp"
         />
       </Link>
-
-      {/* <Link href={""} className="hover:text-accent transition-all duration-300">
-        <FaGithub size={20}/>
-      </Link>
-      <Link href={""} className="hover:text-accent transition-all duration-300">
-        <FaLinkedin size={20}/>
-      </Link>
-      <Link href={""} className="hover:text-accent transition-all duration-300">
-        <FaMedium size={20}/>
-      </Link>
-      <Link href={""} className="hover:text-accent transition-all duration-300">
-        <FaWhatsapp size={20}/>
-      </Link> */}
     </div>
   );
 };
