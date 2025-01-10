@@ -3,9 +3,12 @@ import Bulb from '../../components/Image/Bulb';
 import Circles from '../../components/Image/Circles';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../components/Variants/Variants';
+import Header from '../../components/Header/Header';
 
 const Services = () => {
   return (
+    <>
+    <Header />
     <div className="h-full bg-primary/60 py-36 flex items-center">
       <Circles />
       <div className="container mx-auto">
@@ -46,6 +49,7 @@ const Services = () => {
       </div>
       <Bulb />
     </div>
+    </>
   );
 };
 

@@ -15,6 +15,20 @@ export const AvatarHome = () => {
   );
 };
 
+export const AvatarHomeMobile = () => {
+  return (
+    <div className="flex xl:max-w-none">
+      <Image
+        src={'/profile/avataraboutbg.png'}
+        width={737}
+        height={678}
+        alt="navindu-profile-pic"
+        className="translate-z-0 w-full h-full"
+      />
+    </div>
+  );
+};
+
 export const AvatarAboutBg = () => {
   return (
     <div className="hidden xl:flex xl:max-w-none">

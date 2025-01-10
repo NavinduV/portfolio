@@ -2,11 +2,13 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import ParticlesContainer from '../components/ParticlesContainer/ParticlesContainer';
 import ProjectsBtn from "../components/Button/ProjectsBtn";
-import {AvatarHome} from "../components/Avatar/Avatar";
+import {AvatarHome,AvatarHomeMobile} from "../components/Avatar/Avatar";
 import { fadeIn } from "../components/Variants/Variants";
 import {TextTyping} from "../components/TextTyping/TextTyping";
 import { HiOutlineDocumentDownload } from 'react-icons/hi';
 import { FiGithub } from 'react-icons/fi';
+import Header from '../components/Header/Header';
+
 
 const sliderVariants = {
   initial: {
@@ -24,7 +26,8 @@ const sliderVariants = {
 
 const Home = () => {
   return (
-    <div className="bg-primary/60 h-full">
+    <div className="bg-primary/60 h-full overflow-y-scroll scrollbar-none">
+      <Header />
       <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
         <ParticlesContainer />
         <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto">
@@ -104,9 +107,9 @@ const Home = () => {
               />
             </a>
           </div>
-          <div className="flex justify-center xl:hidden relative">
+          {/* <div className="flex justify-center xl:hidden relative">
             <ProjectsBtn />
-          </div>
+          </div> */}
           <motion.div
             variants={fadeIn('down', 0.4)}
             initial="hidden"
@@ -147,6 +150,19 @@ const Home = () => {
         >
           <AvatarHome />
         </motion.div>
+      </div>
+
+      <div className="h-full w-[1200px] absolute bottom-0 flex xl:hidden opacity-50">
+      <motion.div
+        variants={fadeIn('up', 0.5)}
+        initial="hidden"
+        animate="show"
+        exit="hidden"
+        transition={{ duration: 1, ease: 'easeInOut' }}
+        className="absolute w-full h-full max-w-[607px] max-h-[608px] -bottom-28 -left-[23%]"
+      >
+        <AvatarHomeMobile />
+      </motion.div>
       </div>
 
       <motion.div
