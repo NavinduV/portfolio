@@ -81,7 +81,7 @@ const Home = () => {
             <a
               href="/documents/MBDNV Gunawardhana CV.pdf"
               download="Navindu Gunawardhana CV.pdf"
-              className="group flex gap-2 justify-center anim-btn anim-btn--changeGradient text-md uppercase tracking-[1px] leading-[1.4]"
+              className="group flex gap-2 justify-center anim-btn anim-btn--changeGradient text-md uppercase tracking-[1px] leading-[1.4] px-[16px] py-[12px] xl:px-[28px]"
             >
               My CV
               <HiOutlineDocumentDownload
@@ -92,13 +92,28 @@ const Home = () => {
             <a
               href="/documents/MBDNV Gunawardhana CV.pdf"
               download="Navindu Gunawardhana CV.pdf"
-              className="group flex gap-2 justify-center anim-btn anim-btn--neon  text-md uppercase tracking-[1px] leading-[1.4] bg-[#111]"
+              className="group gap-2 justify-center anim-btn anim-btn--neon  text-md uppercase tracking-[1px] leading-[1.4] bg-[#111] hidden xl:flex px-[28px] py-[12px]"
             >
               <span></span>
               <span></span>
               <span></span>
               <span></span>
               Github
+              <FiGithub
+                size={20}
+                className="group-hover:scale-[110%] transition-all duration-300"
+              />
+            </a>
+
+            <a
+              href="/documents/MBDNV Gunawardhana CV.pdf"
+              download="Navindu Gunawardhana CV.pdf"
+              className="group gap-2 justify-center anim-btn anim-btn--neon  text-md uppercase tracking-[1px] leading-[1.4] bg-[#111] flex lg:hidden px-[16px] py-[12px]"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
               <FiGithub
                 size={20}
                 className="group-hover:scale-[110%] transition-all duration-300"
@@ -151,16 +166,16 @@ const Home = () => {
       </div>
 
       <div className="h-full w-[1200px] absolute bottom-0 flex xl:hidden opacity-50">
-      <motion.div
-        variants={fadeIn('up', 0.5)}
-        initial="hidden"
-        animate="show"
-        exit="hidden"
-        transition={{ duration: 1, ease: 'easeInOut' }}
-        className="absolute w-full h-full max-w-[607px] max-h-[608px] -bottom-28 -left-[23%]"
-      >
-        <AvatarHomeMobile />
-      </motion.div>
+        <motion.div
+          variants={fadeIn('up', 0.5)}
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+          transition={{ duration: 1, ease: 'easeInOut' }}
+          className="absolute w-full h-full max-w-[607px] max-h-[608px] -bottom-28 -left-[23%]"
+        >
+          <AvatarHomeMobile />
+        </motion.div>
       </div>
 
       <motion.div
