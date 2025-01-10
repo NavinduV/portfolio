@@ -65,7 +65,7 @@ export const TextTyping = () => {
 
   return (
     <span>
-      <motion.span className="typingText">{displayText}</motion.span>
+      <motion.span className="typingText text-[32px] md:text-[40px] xl:text-[46px]">{displayText}</motion.span>
       <CursorBlinker />
     </span>
   );
