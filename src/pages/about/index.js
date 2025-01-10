@@ -1,9 +1,10 @@
 import Circles from '../../components/Image/Circles';
 import { AvatarAboutBg } from '../../components/Avatar/Avatar';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { fadeInHalf, fadeIn } from '../../components/Variants/Variants';
+import { useHeader } from '../../Context/HeaderContext'; 
 
 import CountUp from 'react-countup';
 
@@ -135,10 +136,30 @@ const aboutData = [
 ];
 
 const About = () => {
+  const { toggleHeader } = useHeader();
   const [index, setIndex] = useState(0);
+
+  //  const handleScroll = (event) => {
+  //    const scrollPosition = event.target.scrollTop;
+  //    console.log('Scroll position:', scrollPosition);
+     
+  //  };
+
+  const handleScroll = (event) => {
+    const scrollPosition = event.target.scrollTop;
+    if (scrollPosition > 20) {
+      toggleHeader(false); // Hide the header
+    } else {
+      toggleHeader(true); // Show the header
+    }
+  };
+
   return (
     <>
-      <div className="h-full bg-primary/60 py-32 text-center xl:text-left overflow-y-scroll scrollbar-none">
+      <div
+        onScroll={handleScroll}
+        className="h-screen bg-primary/60 py-32 text-center xl:text-left overflow-y-scroll scrollbar-none"
+      >
         <Circles />
 
         <motion.div

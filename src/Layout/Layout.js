@@ -1,7 +1,8 @@
 import { Sora, Poppins } from 'next/font/google';
 import Navbar from '../components/Navbar/Navbar';
-import TopLeftImg from "../components/Image/TopLeftImg";
 import Header from '../components/Header/Header';
+import TopLeftImg from '../components/Image/TopLeftImg';
+import { useHeader } from '../Context/HeaderContext';
 
 const sora = Sora({
   subsets: ['latin'],
@@ -16,14 +17,18 @@ const poppins = Poppins({
 });
 
 const Layout = ({ children }) => {
+  const { isHeaderVisible } = useHeader(); // Consume the context
+
   return (
-    <div className={`page text-white bg-site bg-cover bg-no-repeat ${poppins.variable} font-poppins relative`}>
+    <div
+      className={`page text-white bg-site bg-cover bg-no-repeat ${poppins.variable} font-poppins relative`}
+    >
       <TopLeftImg />
       <Navbar />
-      <Header />
+      {isHeaderVisible && <Header />}
       {children}
     </div>
-  )
+  );
 };
 
 export default Layout;
