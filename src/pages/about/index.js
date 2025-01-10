@@ -1,19 +1,3 @@
-// icons
-import {
-  FaHtml5,
-  FaCss3,
-  FaJs,
-  FaReact,
-  FaWordpress,
-  FaFigma,
-} from 'react-icons/fa';
-
-import {
-  SiNextdotjs,
-  SiFramer,
-  SiAdobexd,
-  SiAdobephotoshop,
-} from 'react-icons/si';
 import Circles from '../../components/Image/Circles';
 import { AvatarAboutBg } from '../../components/Avatar/Avatar';
 import Image from 'next/image';
@@ -89,7 +73,7 @@ const aboutData = [
 const About = () => {
   const [index, setIndex] = useState(0);
   return (
-    <div className="h-full bg-primary/30 py-32 text-center xl:text-left overflow-y-scroll scrollbar-none">
+    <div className="h-full bg-primary/60 py-32 text-center xl:text-left overflow-y-scroll scrollbar-none">
       <Circles />
 
       <motion.div

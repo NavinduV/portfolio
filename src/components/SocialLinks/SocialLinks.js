@@ -1,10 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-// import { FaGithub } from 'react-icons/fa';
-// import { FaLinkedin } from 'react-icons/fa';
-// import { FaMedium } from 'react-icons/fa';
-// import { FaWhatsapp } from 'react-icons/fa';
-
 
 const SocialLinks = () => {
   return (
