@@ -15,42 +15,46 @@ const projectData = {
       images: [
         {
           title: 'title',
-          path: '/thumb1.jpg',
+          path: '/projects/p1.jpg',
+          link: '#',
         },
         {
           title: 'title',
-          path: '/thumb2.jpg',
+          path: '/projects/p2.png',
+          link: '#',
         },
         {
           title: 'title',
-          path: '/thumb3.jpg',
+          path: '/projects/p3.png',
+          link: '#',
         },
         {
           title: 'title',
-          path: '/thumb4.jpg',
+          path: '/projects/p4.png',
+          link: '#',
         },
       ],
     },
-    {
-      images: [
-        {
-          title: 'title',
-          path: '/thumb4.jpg',
-        },
-        {
-          title: 'title',
-          path: '/thumb1.jpg',
-        },
-        {
-          title: 'title',
-          path: '/thumb2.jpg',
-        },
-        {
-          title: 'title',
-          path: '/thumb3.jpg',
-        },
-      ],
-    },
+    // {
+    //   images: [
+    //     {
+    //       title: 'title',
+    //       path: '/projects/p1.jpg',
+    //     },
+    //     {
+    //       title: 'title',
+    //       path: '/projects/p2.jpg',
+    //     },
+    //     {
+    //       title: 'title',
+    //       path: '/projects/p3.jpg',
+    //     },
+    //     {
+    //       title: 'title',
+    //       path: '/projects/p4.jpg',
+    //     },
+    //   ],
+    // },
   ],
 };
 
