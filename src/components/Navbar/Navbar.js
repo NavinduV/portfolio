@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Tooltip from '@mui/material/Tooltip';
 import { styled } from '@mui/material/styles';
-import { useHeader } from '../../Context/HeaderContext'; 
+
 
 export const navLinks = [
   {
@@ -30,11 +30,6 @@ export const navLinks = [
     path: '/projects',
     icon: <AiFillProduct className="text-3xl xl:text-2xl" />,
   },
-  // {
-  //   name: 'testimonials',
-  //   path: '/testimonials',
-  //   icon: <HiChatBubbleBottomCenterText />,
-  // },
   {
     name: 'contact',
     path: '/contact',
@@ -58,7 +53,6 @@ const CustomTooltip = styled(({ className, ...props }) => (
 }));
 
 const Navbar = () => {
-  // const { toggleHeader } = useHeader();
   const router = useRouter();
   const pathname = router.pathname;
 
@@ -75,7 +69,7 @@ const Navbar = () => {
               } relative flex items-center group  hover:scale-110 transition-all duration-300`}
               href={link.path}
               key={index}
-              // onClick={toggleHeader(true)}
+
             >
               <CustomTooltip
                 title={link.name}

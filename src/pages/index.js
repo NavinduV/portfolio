@@ -7,8 +7,6 @@ import { fadeIn } from "../components/Variants/Variants";
 import {TextTyping} from "../components/TextTyping/TextTyping";
 import { HiOutlineDocumentDownload } from 'react-icons/hi';
 import { FiGithub } from 'react-icons/fi';
-import { useHeader } from '../Context/HeaderContext'; 
-import { useEffect } from "react";
 
 const sliderVariants = {
   initial: {

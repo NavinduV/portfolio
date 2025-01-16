@@ -3,12 +3,36 @@ import { fadeIn } from '../../components/Variants/Variants';
 import { motion } from 'framer-motion';
 import { BsArrowRight } from 'react-icons/bs';
 import { useHeader } from '../../Context/HeaderContext';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify'; // Import toast
 import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
   const { toggleHeader } = useHeader();
+  const containerRef = useRef(null);
+    const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  
+    // Header Scroll function
+    const handleScroll = () => {
+      const scrollPosition = containerRef.current.scrollTop;
+      setIsHeaderVisible(scrollPosition <= 15);
+    };
+  
+    useEffect(() => {
+      const container = containerRef.current;
+      if (container) {
+        container.addEventListener('scroll', handleScroll);
+      }
+      return () => {
+        if (container) {
+          container.removeEventListener('scroll', handleScroll);
+        }
+      };
+    }, []);
+  
+    useEffect(() => {
+      toggleHeader(isHeaderVisible);
+    }, [isHeaderVisible, toggleHeader]);
 
   // State for form inputs
   const [formData, setFormData] = useState({
@@ -17,15 +41,6 @@ const Contact = () => {
     subject: '',
     message: '',
   });
-
-  const handleScroll = (event) => {
-    const scrollPosition = event.target.scrollTop;
-    if (scrollPosition > 20) {
-      toggleHeader(false); // Hide the header
-    } else {
-      toggleHeader(true); // Show the header
-    }
-  };
 
   // Handle input change
   const handleChange = (e) => {
@@ -73,11 +88,12 @@ const Contact = () => {
 
   return (
     <div
+      ref={containerRef}
       onScroll={handleScroll}
       className="h-screen bg-primary/60 pt-16 overflow-y-scroll scrollbar-none"
     >
       <ToastContainer position="top-right" autoClose={3000} />
-      <div className="container mx-auto py-32 text-center xl:text-left flex justify-center h-full mb-44 xl:mb-0">
+      <div className="container mx-auto py-32 text-center xl:text-left flex justify-center h-full mb-32 xl:mb-0">
         <div className="flex flex-col w-full max-w-[700px]">
           <motion.h2
             variants={fadeIn('down', 0.2)}

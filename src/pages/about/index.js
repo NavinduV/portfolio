@@ -1,7 +1,7 @@
 import Circles from '../../components/Image/Circles';
 import { AvatarAboutBg } from '../../components/Avatar/Avatar';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { fadeInHalf, fadeIn } from '../../components/Variants/Variants';
 import { useHeader } from '../../Context/HeaderContext'; 
@@ -133,21 +133,36 @@ const aboutData = [
 ];
 
 const About = () => {
-  const { toggleHeader } = useHeader();
   const [index, setIndex] = useState(0);
-
-  const handleScroll = (event) => {
-    const scrollPosition = event.target.scrollTop;
-    if (scrollPosition > 20) {
-      toggleHeader(false); // Hide the header
-    } else {
-      toggleHeader(true); // Show the header
-    }
-  };
+  const { toggleHeader } = useHeader();
+  const containerRef = useRef(null);
+    const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  
+    const handleScroll = () => {
+      const scrollPosition = containerRef.current.scrollTop;
+      setIsHeaderVisible(scrollPosition <= 15);
+    };
+  
+    useEffect(() => {
+      const container = containerRef.current;
+      if (container) {
+        container.addEventListener('scroll', handleScroll);
+      }
+      return () => {
+        if (container) {
+          container.removeEventListener('scroll', handleScroll);
+        }
+      };
+    }, []);
+    
+    useEffect(() => {
+      toggleHeader(isHeaderVisible);
+    }, [isHeaderVisible, toggleHeader]);
 
   return (
     <>
       <div
+        ref={containerRef}
         onScroll={handleScroll}
         className="h-screen bg-primary/60 py-32 text-center xl:text-left overflow-y-scroll scrollbar-none"
       >
