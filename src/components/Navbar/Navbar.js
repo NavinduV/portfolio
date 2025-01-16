@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Tooltip from '@mui/material/Tooltip';
 import { styled } from '@mui/material/styles';
+import { useHeader } from '../../Context/HeaderContext'; 
 
 export const navLinks = [
   {
@@ -57,6 +58,7 @@ const CustomTooltip = styled(({ className, ...props }) => (
 }));
 
 const Navbar = () => {
+  const { toggleHeader } = useHeader();
   const router = useRouter();
   const pathname = router.pathname;
 
@@ -73,6 +75,7 @@ const Navbar = () => {
               } relative flex items-center group  hover:scale-110 transition-all duration-300`}
               href={link.path}
               key={index}
+              onClick={toggleHeader(true)}
             >
               <CustomTooltip
                 title={link.name}

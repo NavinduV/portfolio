@@ -2,12 +2,28 @@ import Circles from '../../components/Image/Circles';
 import {fadeIn} from '../../components/Variants/Variants';
 import { motion } from 'framer-motion';
 import { BsArrowRight } from 'react-icons/bs';
+import { useHeader } from '../../Context/HeaderContext'; 
+import { useEffect } from 'react';
 
 const Contact = () => {
+  const { toggleHeader } = useHeader();
+  
+  const handleScroll = (event) => {
+    const scrollPosition = event.target.scrollTop;
+    if (scrollPosition > 20) {
+      toggleHeader(false); // Hide the header
+    } else {
+      toggleHeader(true); // Show the header
+    }
+  };
+
+
   return (
-    <div className="h-full bg-primary/60">
-      
-      <div className="container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full">
+    <div
+      onScroll={handleScroll}
+      className="h-screen bg-primary/60 pt-16 overflow-y-scroll scrollbar-none"
+    >
+      <div className="container mx-auto py-32 text-center xl:text-left flex justify-center h-full mb-44 xl:mb-0">
         <div className="flex flex-col w-full max-w-[700px]">
           <motion.h2
             variants={fadeIn('down', 0.2)}

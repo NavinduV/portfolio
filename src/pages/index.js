@@ -7,7 +7,8 @@ import { fadeIn } from "../components/Variants/Variants";
 import {TextTyping} from "../components/TextTyping/TextTyping";
 import { HiOutlineDocumentDownload } from 'react-icons/hi';
 import { FiGithub } from 'react-icons/fi';
-
+import { useHeader } from '../Context/HeaderContext'; 
+import { useEffect } from "react";
 
 const sliderVariants = {
   initial: {
@@ -24,6 +25,7 @@ const sliderVariants = {
 };
 
 const Home = () => {
+
   return (
     <div className="bg-primary/60 h-full overflow-y-scroll scrollbar-none">
       <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
@@ -90,7 +92,8 @@ const Home = () => {
               />
             </a>
             <a
-              href="/documents/MBDNV Gunawardhana CV.pdf"
+              href="https://github.com/NavinduV"
+              target="_blank"
               download="Navindu Gunawardhana CV.pdf"
               className="group gap-2 justify-center anim-btn anim-btn--neon  text-md uppercase tracking-[1px] leading-[1.4] bg-[#111] hidden xl:flex px-[28px] py-[12px]"
             >
