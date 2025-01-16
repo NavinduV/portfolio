@@ -131,7 +131,7 @@ const Home = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="flex"
+            className="hidden xl:flex"
           >
             <ProjectsBtn />
           </motion.div>

@@ -18,10 +18,27 @@ const Projects = () => {
     }
   };
 
+   useEffect(() => {
+     // Ensure that the code is running in the browser (client-side)
+     if (typeof window !== 'undefined') {
+       const scrollContainer = document.getElementById('scroll-container');
+
+       // Add event listeners when the component mounts
+       scrollContainer.addEventListener('scroll', handleScroll);
+       scrollContainer.addEventListener('touchmove', handleScroll);
+
+       // Cleanup event listeners when the component unmounts
+       return () => {
+         scrollContainer.removeEventListener('scroll', handleScroll);
+         scrollContainer.removeEventListener('touchmove', handleScroll);
+       };
+     }
+   }, []);
+
   return (
     <>
       <div
-        onScroll={handleScroll}
+        id="scroll-container"
         className="h-screen overflow-y-scroll scrollbar-none bg-primary/60 pt-44 projects"
       >
         <Circles />
