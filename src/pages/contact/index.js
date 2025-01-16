@@ -1,13 +1,23 @@
 import Circles from '../../components/Image/Circles';
-import {fadeIn} from '../../components/Variants/Variants';
+import { fadeIn } from '../../components/Variants/Variants';
 import { motion } from 'framer-motion';
 import { BsArrowRight } from 'react-icons/bs';
-import { useHeader } from '../../Context/HeaderContext'; 
-import { useEffect } from 'react';
+import { useHeader } from '../../Context/HeaderContext';
+import { useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify'; // Import toast
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
   const { toggleHeader } = useHeader();
-  
+
+  // State for form inputs
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+
   const handleScroll = (event) => {
     const scrollPosition = event.target.scrollTop;
     if (scrollPosition > 20) {
@@ -17,12 +27,57 @@ const Contact = () => {
     }
   };
 
+  // Handle input change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!formData.name) {
+      toast.error('Please type your Name.');
+      return;
+    } else if (!formData.email) {
+      toast.error('Please type your Email');
+      return;
+    } else if (!formData.message) {
+      toast.error('Please type the Message');
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/sendEmail', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData), // Use formData (not FormData)
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast.success(data.message); // Show success toast
+        setFormData({ name: '', email: '', subject: '', message: '' }); // Clear form
+      } else {
+        toast.error(data.message || 'Something went wrong.'); // Show error toast
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast.error('An unexpected error occurred. Please try again.'); // Show unexpected error toast
+    }
+  };
 
   return (
     <div
       onScroll={handleScroll}
       className="h-screen bg-primary/60 pt-16 overflow-y-scroll scrollbar-none"
     >
+      <ToastContainer position="top-right" autoClose={3000} />
       <div className="container mx-auto py-32 text-center xl:text-left flex justify-center h-full mb-44 xl:mb-0">
         <div className="flex flex-col w-full max-w-[700px]">
           <motion.h2
@@ -35,6 +90,7 @@ const Contact = () => {
             Let&apos;s <span className="text-accent">Connect.</span>
           </motion.h2>
           <motion.form
+            onSubmit={handleSubmit}
             variants={fadeIn('up', 0.4)}
             initial="hidden"
             animate="show"
@@ -42,12 +98,42 @@ const Contact = () => {
             className="flex-1 flex flex-col gap-6 w-full mx-auto"
           >
             <div className="flex gap-x-6 w-full">
-              <input type="text" placeholder="Name" className="input" />
-              <input type="text" placeholder="Email" className="input" />
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                className="input"
+                value={formData.name}
+                onChange={handleChange}
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                className="input"
+                value={formData.email}
+                onChange={handleChange}
+              />
             </div>
-            <input type="text" placeholder="Subject" className="input" />
-            <textarea placeholder="Message" className="textarea"></textarea>
-            <button className="flex items-center justify-center overflow-hidden hover:border-accent btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all duration-300 group">
+            <input
+              type="text"
+              name="subject"
+              placeholder="Subject"
+              className="input"
+              value={formData.subject}
+              onChange={handleChange}
+            />
+            <textarea
+              name="message"
+              placeholder="Message"
+              className="textarea"
+              value={formData.message}
+              onChange={handleChange}
+            ></textarea>
+            <button
+              type="submit"
+              className="flex items-center justify-center overflow-hidden hover:border-accent btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all duration-300 group"
+            >
               <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">
                 Connect
               </span>
