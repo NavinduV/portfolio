@@ -28,10 +28,7 @@ const Projects = () => {
                 exit="hidden"
                 className="mb-4 max-w-[400px] mx-auto lg:mx-0"
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellat nesciunt quasi laboriosam ipsa recusandae quas
-                cupiditate tenetur omnis iure voluptatibus, reprehenderit dicta.
-                Aliquid molestias est ea nihil esse dicta molestiae.
+                A showcase of the web development projects I’ve worked on, highlighting my expertise in crafting innovative solutions. Each project reflects my ability to design, develop, and deploy full-stack applications tailored to user needs, with a strong focus on functionality, performance, and user experience.
               </motion.p>
             </div>
             <motion.div

@@ -19,28 +19,32 @@ import "swiper/css/pagination";
 const serviceData = [
   {
     icon: <RxCrop />,
-    title: 'Branding',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Front-End Development',
+    description:
+      'Responsive and interactive UI/UX design using modern frameworks.',
   },
   {
     icon: <RxPencil2 />,
-    title: 'Design',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Back-End Development',
+    description:
+      'API development, server-side logic, and database management with Node.js, Express.js, and Prisma.',
   },
   {
     icon: <RxDesktop />,
-    title: 'Development',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Full-Stack Solutions',
+    description:
+      'End-to-end development of web applications, including deployment and optimization.',
   },
   {
     icon: <RxReader />,
-    title: 'Copywriting',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Database Management',
+    description:
+      'Efficient data modeling and management with MongoDB, PostgreSQL, or MySQL.',
   },
   {
     icon: <RxRocket />,
-    title: 'SEO',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Maintenance & Support',
+    description: 'Ongoing updates, bug fixes, and performance optimization.',
   },
 ];
 

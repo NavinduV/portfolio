@@ -103,16 +103,17 @@ const aboutData = [
     title: 'education',
     info: [
       {
-        title: 'Web Development - ABC University, LA, CA',
-        stage: '2011',
+        title: 'Digital Journalism Certification - Reuters',
+        stage: '2021',
       },
       {
-        title: 'Computer Science Diploma - AV Technical Institute',
-        stage: '2009',
+        title: 'Digital Marketing Certification - Google',
+        stage: '2021',
       },
+
       {
-        title: 'Certified Graphic Designer - ABC Institute, Los Angeles, CA',
-        stage: '2006',
+        title: 'BSc in IT - University of Sri Jayewardenepura',
+        stage: '2021 - Present',
       },
     ],
   },
@@ -120,16 +121,12 @@ const aboutData = [
     title: 'experience',
     info: [
       {
-        title: 'UX/UI Designer - XYZ Company',
-        stage: '2012 - 2023',
+        title: 'Front-End Web Development',
+        stage: '2020 - 2023',
       },
       {
-        title: 'Web Developer - ABC Agency',
-        stage: '2010 - 2012',
-      },
-      {
-        title: 'Intern - DEF Corporation',
-        stage: '2008 - 2010',
+        title: 'Full Stack Web Development',
+        stage: '2023',
       },
     ],
   },
@@ -209,7 +206,7 @@ const About = () => {
               <div className="flex flex-1 xl:gap-x-6">
                 <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                   <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                    <CountUp start={0} end={4} duration={5} /> +
+                    <CountUp start={0} end={3} duration={5} /> +
                   </div>
                   <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
                     Years of experience
@@ -218,7 +215,7 @@ const About = () => {
 
                 <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                   <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                    <CountUp start={0} end={20} duration={5} /> +
+                    <CountUp start={0} end={12} duration={5} /> +
                   </div>
                   <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
                     Satisfied Clients
@@ -236,7 +233,7 @@ const About = () => {
 
                 <div className="relative flex-1">
                   <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                    <CountUp start={0} end={5} duration={5} /> +
+                    <CountUp start={0} end={3} duration={5} /> +
                   </div>
                   <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
                     Winning awards
