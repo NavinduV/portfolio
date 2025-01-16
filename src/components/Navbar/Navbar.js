@@ -58,7 +58,7 @@ const CustomTooltip = styled(({ className, ...props }) => (
 }));
 
 const Navbar = () => {
-  const { toggleHeader } = useHeader();
+  // const { toggleHeader } = useHeader();
   const router = useRouter();
   const pathname = router.pathname;
 
@@ -75,7 +75,7 @@ const Navbar = () => {
               } relative flex items-center group  hover:scale-110 transition-all duration-300`}
               href={link.path}
               key={index}
-              onClick={toggleHeader(true)}
+              // onClick={toggleHeader(true)}
             >
               <CustomTooltip
                 title={link.name}
