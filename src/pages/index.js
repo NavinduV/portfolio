@@ -30,7 +30,7 @@ const Home = () => {
     <div className="bg-primary/60 h-full overflow-y-scroll scrollbar-none">
       <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
         <ParticlesContainer />
-        <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto">
+        <div className="text-center flex flex-col xl:justify-center pt-48 xl:pt-40 xl:text-left h-screen xl:h-full container mx-auto overflow-y-scroll scrollbar-none">
           <motion.div
             className="xl:flex items-center gap-4 z-10 hidden mb-3"
             variants={fadeIn('down', 0.2)}
@@ -131,7 +131,7 @@ const Home = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="hidden xl:flex"
+            className="flex"
           >
             <ProjectsBtn />
           </motion.div>

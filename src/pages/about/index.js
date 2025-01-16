@@ -136,12 +136,6 @@ const About = () => {
   const { toggleHeader } = useHeader();
   const [index, setIndex] = useState(0);
 
-  //  const handleScroll = (event) => {
-  //    const scrollPosition = event.target.scrollTop;
-  //    console.log('Scroll position:', scrollPosition);
-     
-  //  };
-
   const handleScroll = (event) => {
     const scrollPosition = event.target.scrollTop;
     if (scrollPosition > 20) {

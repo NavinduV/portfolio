@@ -55,20 +55,19 @@ const Contact = () => {
       const response = await fetch('/api/sendEmail', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData), // Use formData (not FormData)
+        body: JSON.stringify(formData),
       });
 
       const data = await response.json();
 
       if (response.ok) {
-        toast.success(data.message); // Show success toast
-        setFormData({ name: '', email: '', subject: '', message: '' }); // Clear form
+        toast.success(data.message);
+        setFormData({ name: '', email: '', subject: '', message: '' })
       } else {
-        toast.error(data.message || 'Something went wrong.'); // Show error toast
+        toast.error(data.message || 'Something went wrong.');
       }
     } catch (error) {
-      console.error('Error submitting form:', error);
-      toast.error('An unexpected error occurred. Please try again.'); // Show unexpected error toast
+      toast.error('An unexpected error occurred. Please try again.');
     }
   };
 
