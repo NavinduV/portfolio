@@ -16,22 +16,22 @@ const projectData = {
         {
           title: 'title',
           path: '/projects/p1.jpg',
-          link: '#',
+          link: 'https://salon-management-app.onrender.com/',
         },
         {
           title: 'title',
           path: '/projects/p2.png',
-          link: '#',
+          link: 'https://warmhands.vercel.app/news',
         },
         {
           title: 'title',
           path: '/projects/p3.png',
-          link: '#',
+          link: 'https://navinduv.github.io/bg-generator/',
         },
         {
           title: 'title',
           path: '/projects/p4.png',
-          link: '#',
+          link: 'https://salon-management-app.onrender.com/',
         },
       ],
     },
@@ -77,6 +77,7 @@ const ProjectSlider = () => {
                   <div
                     className="relative rounded-lg overflow-hidden flex items-center justify-center group"
                     key={index}
+                    onClick={() => window.open(image.link, '_blank')}
                   >
                     <div className="flex items-center justify-center relative overflow-hidden group">
                       <Image src={image.path} width={500} height={300} alt="" />
@@ -84,8 +85,12 @@ const ProjectSlider = () => {
                       <div className="absolute bottom-0 translate-y-full xl:group-hover:-translate-y-16 group-hover:-translate-y-12 transition-all duration-500">
                         <div className="flex items-center gap-x-2 text-[13px] tracking-[0.1em]">
                           <div className="delay-100">LIVE</div>
-                          <div className='translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150'>PROJECT</div>
-                          <div className='text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-200'><BsArrowRight /></div>
+                          <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
+                            PROJECT
+                          </div>
+                          <div className="text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-200">
+                            <BsArrowRight />
+                          </div>
                         </div>
                       </div>
                     </div>
