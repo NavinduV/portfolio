@@ -15,6 +15,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>Navindu Gunawardhana</title>
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <HeaderProvider>
         <Layout>
