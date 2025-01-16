@@ -4,7 +4,11 @@ import Image from "next/image";
 const SocialLinks = () => {
   return (
     <div className="flex items-center gap-x-5 z-10">
-      <Link href={'/'} className="group">
+      <Link
+        href={'https://github.com/NavinduV'}
+        className="group"
+        target="_blank"
+      >
         <Image
           src={'/icons/github.svg'}
           width={28}
@@ -13,7 +17,11 @@ const SocialLinks = () => {
           alt="github"
         />
       </Link>
-      <Link href={'/'} className="group">
+      <Link
+        href={'https://www.linkedin.com/in/navindu-virajitha/'}
+        className="group"
+        target="_blank"
+      >
         <Image
           src={'/icons/linkedin.svg'}
           width={28}
@@ -22,7 +30,11 @@ const SocialLinks = () => {
           alt="linkedin"
         />
       </Link>
-      <Link href={'/'} className="group">
+      <Link
+        href={'https://medium.com/@navindu-virajitha'}
+        className="group"
+        target="_blank"
+      >
         <Image
           src={'/icons/medium.svg'}
           width={28}
@@ -31,7 +43,11 @@ const SocialLinks = () => {
           alt="medium"
         />
       </Link>
-      <Link href={'/'} className="group">
+      <Link
+        href={'https://wa.me/+94762987976'}
+        className="group"
+        target="_blank"
+      >
         <Image
           src={'/icons/whatsapp.svg'}
           width={26}
