@@ -1,9 +1,10 @@
+'use client';
 import ProjectSlider from '../../components/Slider/ProjectSlider';
 import Bulb from '../../components/Image/Bulb';
 import Circles from '../../components/Image/Circles';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../components/Variants/Variants';
-import { useHeader } from '../../Context/HeaderContext'; 
+import { useHeader } from '../../Context/HeaderContext';
 import { useEffect } from 'react';
 
 const Projects = () => {
@@ -18,22 +19,22 @@ const Projects = () => {
     }
   };
 
-   useEffect(() => {
-     // Ensure that the code is running in the browser (client-side)
-     if (typeof window !== 'undefined') {
-       const scrollContainer = document.getElementById('scroll-container');
+  useEffect(() => {
+    // Ensure that the code is running in the browser (client-side)
+    if (typeof window !== 'undefined') {
+      const scrollContainer = document.getElementById('scroll-container');
 
-       // Add event listeners when the component mounts
-       scrollContainer.addEventListener('scroll', handleScroll);
-       scrollContainer.addEventListener('touchmove', handleScroll);
+      // Add event listeners when the component mounts
+      scrollContainer.addEventListener('scroll', handleScroll);
+      scrollContainer.addEventListener('touchmove', handleScroll);
 
-       // Cleanup event listeners when the component unmounts
-       return () => {
-         scrollContainer.removeEventListener('scroll', handleScroll);
-         scrollContainer.removeEventListener('touchmove', handleScroll);
-       };
-     }
-   }, []);
+      // Cleanup event listeners when the component unmounts
+      return () => {
+        scrollContainer.removeEventListener('scroll', handleScroll);
+        scrollContainer.removeEventListener('touchmove', handleScroll);
+      };
+    }
+  }, []);
 
   return (
     <>
