@@ -31,7 +31,7 @@ const projectData = {
         {
           title: 'title',
           path: '/projects/p4.png',
-          link: 'https://salon-management-app.onrender.com/',
+          link: 'https://navinduv.github.io/color-palette-generator/',
         },
       ],
     },
