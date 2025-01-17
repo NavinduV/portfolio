@@ -21,7 +21,8 @@ const projectData = {
         {
           title: 'title',
           path: '/projects/p2.png',
-          link: 'https://warmhands.vercel.app/news',
+          //link: 'https://warmhands.vercel.app',
+          link: 'https://github.com/WarmHands-DMS/warmhands'
         },
         {
           title: 'title',
