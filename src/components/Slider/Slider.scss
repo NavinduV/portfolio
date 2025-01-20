@@ -1,0 +1,22 @@
+.projects {
+  .swiper-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .swiper-pagination-bullet {
+    opacity: 0.6;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .swiper-pagination-bullet:hover {
+    transform: scale(1.1); /* Add a hover effect */
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #e339c7; /* Active bullet color */
+    opacity: 1;
+    transform: scale(1.2); /* Highlight the active bullet */
+  }
+}

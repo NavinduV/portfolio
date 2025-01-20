@@ -3,11 +3,11 @@ import { BiSolidUserRectangle } from 'react-icons/bi';
 import { MdViewCarousel } from 'react-icons/md';
 import { AiFillProduct } from 'react-icons/ai';
 import { IoIosMail } from 'react-icons/io';
-
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Tooltip from '@mui/material/Tooltip';
 import { styled } from '@mui/material/styles';
+
 
 export const navLinks = [
   {
@@ -30,11 +30,6 @@ export const navLinks = [
     path: '/projects',
     icon: <AiFillProduct className="text-3xl xl:text-2xl" />,
   },
-  // {
-  //   name: 'testimonials',
-  //   path: '/testimonials',
-  //   icon: <HiChatBubbleBottomCenterText />,
-  // },
   {
     name: 'contact',
     path: '/contact',
@@ -74,6 +69,7 @@ const Navbar = () => {
               } relative flex items-center group  hover:scale-110 transition-all duration-300`}
               href={link.path}
               key={index}
+
             >
               <CustomTooltip
                 title={link.name}

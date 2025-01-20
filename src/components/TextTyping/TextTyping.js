@@ -22,16 +22,11 @@ export const CursorBlinker = () => {
       className="inline-block h-[30px] xl:h-[45px] w-[4px] translate-y-1 bg-[#b61e13] ml-2"
     />
   );
-}
-
+};
 
 export const TextTyping = () => {
   const textIndex = useMotionValue(0);
-  const texts = [
-    'MERN Developer',
-    "Full Stack Developer",
-    
-  ];
+  const texts = ['MERN Developer', 'Full Stack Developer'];
 
   const baseText = useTransform(textIndex, (latest) => texts[latest] || '');
   const count = useMotionValue(0);
@@ -42,7 +37,7 @@ export const TextTyping = () => {
   const updatedThisRound = useMotionValue(true);
 
   useEffect(() => {
-    animate(count, 60, {
+    const updateTextAnimation = animate(count, 60, {
       type: 'tween',
       duration: 5,
       ease: 'easeIn',
@@ -50,9 +45,9 @@ export const TextTyping = () => {
       repeatType: 'reverse',
       repeatDelay: 1,
       onUpdate(latest) {
-        if (updatedThisRound.get() === true && latest > 0) {
+        if (updatedThisRound.get() && latest > 0) {
           updatedThisRound.set(false);
-        } else if (updatedThisRound.get() === false && latest === 0) {
+        } else if (!updatedThisRound.get() && latest === 0) {
           if (textIndex.get() === texts.length - 1) {
             textIndex.set(0);
           } else {
@@ -62,12 +57,16 @@ export const TextTyping = () => {
         }
       },
     });
-  }, []);
+
+    return () => {
+      updateTextAnimation.stop();
+    };
+  }, [count, textIndex, texts.length, updatedThisRound]);
 
   return (
     <span>
-      <motion.span className='typingText'>{displayText}</motion.span>
+      <motion.span className="typingText text-[32px] md:text-[40px] xl:text-[46px]">{displayText}</motion.span>
       <CursorBlinker />
     </span>
   );
-}
+};
