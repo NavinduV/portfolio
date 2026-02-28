@@ -276,7 +276,7 @@ const About = () => {
           </div>
 
           {/* Content Container */}
-          <div className="py-2 xl:py-4 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start w-full h-[480px] xl:h-[58vh] overflow-y-auto scrollbar-thin scrollbar-thumb-accent/50 scrollbar-track-transparent scrollbar-hide-buttons pr-2 md:pr-4 pb-24">
+          <div className="py-2 xl:py-4 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start w-full h-[480px] xl:h-[58vh] overflow-y-auto scrollbar-thin scrollbar-thumb-accent/50 scrollbar-track-transparent scrollbar-hide-buttons pr-2 md:pr-4 pb-36 xl:pb-4">
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 10 }}
