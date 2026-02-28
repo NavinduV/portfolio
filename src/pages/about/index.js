@@ -156,7 +156,7 @@ const About = () => {
     <div
       ref={containerRef}
       onScroll={handleScroll}
-      className="h-screen bg-primary/60 pt-40 md:pt-48 pb-40 md:pb-32 text-center xl:text-left overflow-y-scroll scrollbar-none relative"
+      className="h-screen bg-primary/60 pt-40 md:pt-48 pb-48 md:pb-32 text-center xl:text-left overflow-y-scroll scrollbar-none relative"
     >
       <Circles />
 

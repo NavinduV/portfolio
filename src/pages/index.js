@@ -112,7 +112,8 @@ const Home = () => {
             </a>
 
             <a
-              href="/documents/MBDNV Gunawardhana CV.pdf"
+              href="https://github.com/NavinduV"
+              target="_blank"
               download="Navindu Gunawardhana CV.pdf"
               className="group gap-2 justify-center anim-btn anim-btn--neon  text-md uppercase tracking-[1px] leading-[1.4] bg-[#111] flex lg:hidden px-[16px] py-[12px]"
             >
@@ -167,10 +168,12 @@ const Home = () => {
           transition={{ duration: 1, ease: 'easeInOut' }}
           className="absolute w-full h-full max-w-[727px] max-h-[688px] -bottom-48 lg:-bottom-1 lg:right-[3%] overflow-visible"
           style={{
-            WebkitMaskImage: 'linear-gradient(to bottom, transparent 5%, black 20%, black 60%, transparent 85%), linear-gradient(to right, transparent 15%, black 45%)',
-            maskImage: 'linear-gradient(to bottom, transparent 5%, black 20%, black 60%, transparent 85%), linear-gradient(to right, transparent 15%, black 45%)',
+            WebkitMaskImage:
+              'linear-gradient(to bottom, transparent 5%, black 20%, black 60%, transparent 85%), linear-gradient(to right, transparent 15%, black 45%)',
+            maskImage:
+              'linear-gradient(to bottom, transparent 5%, black 20%, black 60%, transparent 85%), linear-gradient(to right, transparent 15%, black 45%)',
             WebkitMaskComposite: 'destination-in',
-            maskComposite: 'intersect'
+            maskComposite: 'intersect',
           }}
         >
           <AvatarHome />
