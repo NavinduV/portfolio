@@ -38,12 +38,12 @@ const Services = () => {
       <div
         ref={containerRef}
         onScroll={handleScroll}
-        className="h-screen overflow-y-scroll scrollbar-none bg-primary/60 pt-44"
+        className="h-screen overflow-y-scroll overflow-x-hidden scrollbar-none bg-primary/60 pt-44 pb-20 md:pb-0"
       >
         <Circles />
         <div className="container mx-auto">
           <div className="flex flex-col xl:flex-row gap-x-8">
-            <div className="text-center flex xl:w-[40vw] flex-col lg:text-left mb-10 xl:mb-0 pt-10">
+            <div className="text-center flex xl:w-[30%] flex-col lg:text-left mb-10 xl:mb-0 pt-10 shrink-0">
               <motion.h2
                 variants={fadeIn('down', 0.2)}
                 initial="hidden"
@@ -72,7 +72,7 @@ const Services = () => {
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="w-full xl:max-w-[65%] xl:pt-12 pt-2 mb-24 xl:mb-0"
+              className="w-full xl:flex-1 xl:pt-12 pt-2 mb-24 xl:mb-0 min-w-0"
             >
               <ServiceSlider />
             </motion.div>

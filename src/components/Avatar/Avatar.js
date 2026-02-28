@@ -5,11 +5,12 @@ export const AvatarHome = () => {
   return (
     <div className="hidden xl:flex xl:max-w-none">
       <Image
-        src={'/profile/navindu.png'}
+        src={'/profile/avataraboutbg.png'}
         width={737}
         height={678}
         alt="navindu-profile-pic"
         className="translate-z-0 w-full h-full"
+        priority
       />
     </div>
   );
@@ -24,6 +25,7 @@ export const AvatarHomeMobile = () => {
         height={678}
         alt="navindu-profile-pic"
         className="translate-z-0 w-full h-full"
+        priority
       />
     </div>
   );

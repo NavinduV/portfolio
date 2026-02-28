@@ -90,7 +90,7 @@ const Contact = () => {
     <div
       ref={containerRef}
       onScroll={handleScroll}
-      className="h-screen bg-primary/60 pt-16 overflow-y-scroll scrollbar-none"
+      className="h-screen bg-primary/60 pt-16 pb-40 md:pb-0 overflow-y-scroll scrollbar-none"
     >
       <ToastContainer position="top-right" autoClose={3000} />
       <div className="container mx-auto py-32 text-center xl:text-left flex justify-center h-full mb-32 xl:mb-0">

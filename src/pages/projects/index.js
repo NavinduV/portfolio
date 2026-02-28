@@ -38,7 +38,7 @@ const Projects = () => {
       <div
         ref={containerRef}
         onScroll={handleScroll}
-        className="h-screen overflow-y-scroll scrollbar-none bg-primary/60 pt-44 projects"
+        className="h-screen overflow-y-scroll scrollbar-none bg-primary/60 pt-44 pb-40 md:pb-0 projects"
       >
         <Circles />
         <div className="container mx-auto h-fit xl:h-full">

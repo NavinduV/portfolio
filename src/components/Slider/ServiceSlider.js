@@ -1,95 +1,119 @@
-// icons
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 import {
   RxCrop,
   RxPencil2,
   RxDesktop,
   RxReader,
   RxRocket,
-  RxArrowTopRight
+  RxArrowTopRight,
+  RxBookmark,
 } from "react-icons/rx";
 
-import {Swiper, SwiperSlide} from "swiper/react";
-import { FreeMode, Pagination } from "swiper/modules";
-
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/pagination";
-
-// data
 const serviceData = [
   {
     icon: <RxCrop />,
-    title: 'Front-End Development',
+    title: 'UI/UX Design',
     description:
-      'Responsive and interactive UI/UX design using modern frameworks.',
+      'Creating intuitive, user-centric interfaces with modern design principles and seamless interactions.',
   },
   {
     icon: <RxPencil2 />,
-    title: 'Back-End Development',
+    title: 'Front-End Development',
     description:
-      'API development, server-side logic, and database management with Node.js, Express.js, and Prisma.',
+      'Building responsive, high-performance web UIs using React, Next.js, and Tailwind CSS.',
   },
   {
     icon: <RxDesktop />,
-    title: 'Full-Stack Solutions',
+    title: 'Back-End Development',
     description:
-      'End-to-end development of web applications, including deployment and optimization.',
+      'Robust server-side logic, API development, and database management with Node.js, Express, and Python.',
   },
   {
     icon: <RxReader />,
-    title: 'Database Management',
+    title: 'Full-Stack Solutions',
     description:
-      'Efficient data modeling and management with MongoDB, PostgreSQL, or MySQL.',
+      'End-to-end web application development from database architecture to polished frontend UI.',
   },
   {
     icon: <RxRocket />,
-    title: 'Maintenance & Support',
-    description: 'Ongoing updates, bug fixes, and performance optimization.',
+    title: 'SEO & Optimization',
+    description:
+      'Enhancing website performance, speed, and search engine visibility for better reach.',
+  },
+  {
+    icon: <RxBookmark />,
+    title: 'Academic Projects',
+    description:
+      'Got a university project? I help students and researchers turn complex academic ideas into clean, working software — from research tools and data dashboards to full systems that actually make sense.',
   },
 ];
 
+// Split array into chunks of n
+const chunkArray = (arr, n) =>
+  arr.reduce((acc, _, i) => (i % n === 0 ? [...acc, arr.slice(i, i + n)] : acc), []);
+
+const ServiceCard = ({ item }) => (
+  <div className="bg-[rgba(65,47,123,0.15)] rounded-2xl px-6 py-7 flex flex-col justify-between gap-y-4 group hover:bg-[rgba(89,65,169,0.2)] transition-all duration-300 border border-white/5 hover:border-accent/30 backdrop-blur-sm relative overflow-hidden h-full">
+    <div className="absolute -bottom-6 -right-6 w-20 h-20 bg-accent/5 rounded-full blur-2xl group-hover:bg-accent/10 transition-colors duration-500" />
+    <div className="text-4xl text-accent group-hover:scale-110 transition-transform duration-300">
+      {item.icon}
+    </div>
+    <div>
+      <div className="mb-2 text-lg font-bold text-white group-hover:text-accent transition-colors duration-300">
+        {item.title}
+      </div>
+      <p className="text-sm leading-relaxed text-white/60 group-hover:text-white/80 transition-colors duration-300">
+        {item.description}
+      </p>
+    </div>
+    <div className="text-2xl">
+      <RxArrowTopRight className="group-hover:rotate-45 group-hover:text-accent transition-all duration-300" />
+    </div>
+  </div>
+);
+
 const ServiceSlider = () => {
+  const slides = chunkArray(serviceData, 2); // 3 slides of 2 cards each
+
   return (
-    <Swiper
-      breakpoints={{
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 15,
-        },
-        640: {
-          slidesPerView: 3,
-          spaceBetween: 15,
-        }
-      }}
-      freeMode={true}
-      pagination={{
-        clickable: true
-      }}
-      modules={[FreeMode, Pagination]}
-      className="h-[250px] xl:h-[420px]"
-    >
-      {
-        serviceData.map((item, index) => {
-          return (
-            <SwiperSlide key={index}>
-              <div className="bg-[rgba(65,47,123,0.15)] h-max xl:h-[380px] rounded-lg px-6 py-8 flex sm:flex-col justify-between gap-x-6 sm:gap-x-0 group cursor-pointer hover:bg-[rgba(89,65,169,0.15)] transition-all duration-300">
-                <div className="text-4xl text-accent mb-4">{item.icon}</div>
+    <>
+      {/* Mobile: stacked list */}
+      <div className="flex flex-col gap-4 md:hidden">
+        {serviceData.map((item, i) => (
+          <ServiceCard key={i} item={item} />
+        ))}
+      </div>
 
-                <div className="mb-8">
-                  <div className="mb-2 text-lg">{item.title}</div>
-                  <p className="max-w-[350px] leading-normal">{item.description}</p>
-                </div>
-
-                <div className="text-3xl">
-                  <RxArrowTopRight className="group-hover:rotate-45 group-hover:text-accent transition-all duration-300"/>
-                </div>
+      {/* Desktop: 2-per-slide Swiper (3 slides total) */}
+      <div className="hidden md:block">
+        <Swiper
+          grabCursor={true}
+          loop={false}
+          autoplay={{ delay: 3500, disableOnInteraction: false, pauseOnMouseEnter: true }}
+          pagination={{ clickable: true }}
+          modules={[Pagination, Autoplay]}
+          className="!pb-12"
+        >
+          {slides.map((slide, i) => (
+            <SwiperSlide key={i}>
+              <div className="flex gap-4">
+                {slide.map((item, j) => (
+                  <div key={j} className="flex-1">
+                    <ServiceCard item={item} />
+                  </div>
+                ))}
               </div>
             </SwiperSlide>
-          );
-        })
-      }
-    </Swiper>
+          ))}
+        </Swiper>
+      </div>
+    </>
   );
 };
 
 export default ServiceSlider;
+
+

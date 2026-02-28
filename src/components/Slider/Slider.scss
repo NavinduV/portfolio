@@ -20,3 +20,21 @@
     transform: scale(1.2); /* Highlight the active bullet */
   }
 }
+
+.custom-pagination {
+  .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    opacity: 1;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #F13024;
+    transform: scale(1.3);
+  }
+}

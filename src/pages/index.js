@@ -1,12 +1,17 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import ParticlesContainer from "../components/ParticlesContainer";
+import dynamic from "next/dynamic";
 import ProjectsBtn from "../components/Button/ProjectsBtn";
 import {AvatarHome,AvatarHomeMobile} from "../components/Avatar/Avatar";
 import { fadeIn } from "../components/Variants/Variants";
 import {TextTyping} from "../components/TextTyping/TextTyping";
 import { HiOutlineDocumentDownload } from 'react-icons/hi';
 import { FiGithub } from 'react-icons/fi';
+
+const ParticlesContainer = dynamic(
+  () => import("../components/ParticlesContainer/ParticlesContainer"),
+  { ssr: false }
+);
 
 const sliderVariants = {
   initial: {
@@ -28,7 +33,7 @@ const Home = () => {
     <div className="bg-primary/60 h-full">
       <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
         <ParticlesContainer />
-        <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto">
+        <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto relative z-30">
           <motion.div
             className="xl:flex items-center gap-4 z-10 hidden mb-3"
             variants={fadeIn('down', 0.2)}
@@ -124,7 +129,7 @@ const Home = () => {
           {/* <div className="flex justify-center xl:hidden relative">
             <ProjectsBtn />
           </div> */}
-          <motion.div
+          {/* <motion.div
             variants={fadeIn('down', 0.4)}
             initial="hidden"
             animate="show"
@@ -132,7 +137,7 @@ const Home = () => {
             className="hidden xl:flex"
           >
             <ProjectsBtn />
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
 
@@ -160,7 +165,13 @@ const Home = () => {
           animate="show"
           exit="hidden"
           transition={{ duration: 1, ease: 'easeInOut' }}
-          className="absolute w-full h-full max-w-[727px] max-h-[688px] -bottom-32 lg:bottom-28 lg:right-[10%]"
+          className="absolute w-full h-full max-w-[727px] max-h-[688px] -bottom-48 lg:-bottom-1 lg:right-[3%] overflow-visible"
+          style={{
+            WebkitMaskImage: 'linear-gradient(to bottom, transparent 5%, black 20%, black 60%, transparent 85%), linear-gradient(to right, transparent 15%, black 45%)',
+            maskImage: 'linear-gradient(to bottom, transparent 5%, black 20%, black 60%, transparent 85%), linear-gradient(to right, transparent 15%, black 45%)',
+            WebkitMaskComposite: 'destination-in',
+            maskComposite: 'intersect'
+          }}
         >
           <AvatarHome />
         </motion.div>

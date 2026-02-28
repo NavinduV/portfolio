@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect rx="12" fill="#7B2FF7" width="128" height="128"/>
+  <path d="M40 35 C30 40, 25 55, 30 70 C35 85, 50 90, 64 88 C78 86, 90 75, 95 60 C100 45, 92 32, 80 30 C68 28, 50 30, 40 35Z" fill="none" stroke="#fff" stroke-width="3.5" stroke-dasharray="6 3"/>
+  <circle cx="50" cy="52" r="3" fill="#fff"/>
+  <circle cx="75" cy="48" r="3" fill="#fff"/>
+  <circle cx="64" cy="70" r="3" fill="#fff"/>
+  <line x1="50" y1="52" x2="75" y2="48" stroke="#fff" stroke-width="1.5" opacity="0.5"/>
+  <line x1="75" y1="48" x2="64" y2="70" stroke="#fff" stroke-width="1.5" opacity="0.5"/>
+  <line x1="64" y1="70" x2="50" y2="52" stroke="#fff" stroke-width="1.5" opacity="0.5"/>
+  <text x="64" y="112" font-family="Arial,sans-serif" font-weight="bold" font-size="14" fill="#fff" text-anchor="middle">MaskRCNN</text>
+</svg>
