@@ -79,7 +79,7 @@ const ProjectDetail = () => {
       <Circles />
 
       {/* Two-column layout */}
-      <div className="min-h-full xl:h-full flex flex-col xl:flex-row pt-36 xl:pt-28 container mx-auto px-6 xl:px-8 gap-0 xl:gap-8 pb-28 xl:pb-0">
+      <div className="min-h-full xl:h-full flex flex-col xl:flex-row pt-36 xl:pt-28 container mx-auto px-6 xl:px-8 gap-0 xl:gap-8 pb-36 xl:pb-0">
         {/* LEFT SIDE — Image Gallery (fixed on desktop, flows on mobile) */}
         <motion.div
           variants={fadeIn('right', 0.3)}
@@ -155,7 +155,7 @@ const ProjectDetail = () => {
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="xl:w-[45%] xl:h-full xl:overflow-y-auto scrollbar-none pt-4 xl:pt-6 xl:pb-16"
+          className="xl:w-[45%] xl:h-full xl:overflow-y-auto scrollbar-none pt-4 xl:pt-6 xl:pb-16 mb-10 xl:mb-0"
         >
           {/* Title */}
           <h2 className="h2 mb-6">

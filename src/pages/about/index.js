@@ -156,7 +156,7 @@ const About = () => {
     <div
       ref={containerRef}
       onScroll={handleScroll}
-      className="h-screen bg-primary/60 pt-40 md:pt-48 pb-48 md:pb-32 text-center xl:text-left overflow-y-scroll scrollbar-none relative"
+      className="h-screen bg-primary/60 pt-40 md:pt-48 pb-48 md:pb-32 xl:pb-0 text-center xl:text-left overflow-y-scroll scrollbar-none relative"
     >
       <Circles />
 
@@ -254,7 +254,7 @@ const About = () => {
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="flex flex-col w-full xl:max-w-[50%] z-10 xl:h-[60vh] justify-center"
+          className="flex flex-col w-full xl:max-w-[50%] z-10 xl:h-[60vh] justify-center mb-10 xl:mb-0"
         >
           {/* Modernized Floating Tabs */}
           <div className="flex gap-x-2 mx-auto xl:mx-0 mb-10 bg-white/5 p-1.5 rounded-2xl border border-white/10 backdrop-blur-sm w-max shadow-lg">
